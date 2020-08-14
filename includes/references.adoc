@@ -1,0 +1,19 @@
+= Some references
+include::header.adoc[]
+
+== GitHub
+
+. {uri-github-termux}
+. {uri-github-termux-app}
+
+== Articles
+
+. {uri-termux-article-0}[Termux turns Android into a Linux development environment^]
+
+== YouTube videos
+
+TODO
+
+== Questions
+
+. {uri-termux-article-1}[How to install docker on termux?^]

@@ -1,0 +1,11 @@
+:PauloJeronimo: <<who-is-paulo-jerônimo,Paulo Jerônimo>>
+:Unbox: Unbox
+:CaixaSeguradora: Caixa Seguradora
+:Angular: Angular
+:ReactNative: React Native
+:Solidity: Solidity
+:Termux: {uri-termux-playstore}[Termux^]
+:FinisherTech: {uri-finishertech}[Finisher.Tech^]
+:Keycloak: {uri-keycloak}[Keycloak^]
+:Passbolt: {uri-passbolt}[Passbolt^]
+:DockerHub: {uri-dockerhub}[Docker Hub^]

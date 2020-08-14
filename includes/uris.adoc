@@ -1,0 +1,24 @@
+// uris
+:uri-pj-cv: https://paulojeronimo.github.io/cv/en/
+:uri-finishertech: https://finisher.tech
+:uri-asciidoc-syntax-quick-reference: https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/
+:uri-termux: https://termux.com/
+:uri-termux-playstore: https://play.google.com/store/apps/details?id=com.termux&hl=en
+:uri-termux-api-playstore: https://play.google.com/store/apps/details?id=com.termux.api&hl=en
+:uri-termux-f-droid: https://f-droid.org/en/packages/com.termux/
+:uri-termux-nethunter: https://store.nethunter.com/en/packages/com.termux/
+:uri-termux-api: https://play.google.com/store/apps/details?id=com.termux.api&hl=en
+:uri-github-termux: https://github.com/termux/
+:uri-github-termux-app: https://github.com/termux/termux-app
+:uri-github-paulojeronimo-termux-presentation: https://github.com/paulojeronimo/termux-presentation
+:uri-termux-article-0: https://opensource.com/article/18/5/termux
+:uri-termux-article-1: https://www.reddit.com/r/termux/comments/av6z2s/how_to_install_docker_on_termux/
+:uri-keycloak: https://www.keycloak.org/
+:uri-passbolt: https://www.passbolt.com
+:uri-dockerhub: https://hub.docker.com/
+
+// https://www.makeuseof.com/tag/use-linux-command-line-android-termux/
+// https://gist.github.com/gpchelkin/b18916c56ff7c759860725a28a747242
+// https://www.reddit.com/r/termux/comments/8qc92m/programming_on_the_phone_using_termux_terminal/
+// https://www.sololearn.com/Discuss/1764096/which-programming-language-is-used-in-termux
+// https://wiki.termux.com/wiki/Development_Environments

@@ -1,0 +1,28 @@
+[multipage-level=1]
+= What is Termux?
+include::header.adoc[]
+
+{Termux} is an Android terminal application and Linux environment.
+
+ifdef::backend-multipage_html5[]
+'''
+endif::[]
+
+== How to install?
+include::header.adoc[]
+
+. *Users* normally go to {uri-termux-playstore}[Play Store^] and
+download it.
+. *Some categories of users* like to install by trailing _other paths_:
+.. {uri-termux-f-droid}[F-Droid^].
+.. {uri-termux-nethunter}[Kali NetHunter^].
+
+== What can I do with it?
+include::header.adoc[]
+
+TODO
+
+== Related or complimentary
+include::header.adoc[]
+
+. {uri-termux-api}[Termux:API^]

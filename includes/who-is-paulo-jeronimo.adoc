@@ -1,0 +1,23 @@
+[multipage-level=1]
+= Who is Paulo Jerônimo?
+include::header.adoc[]
+
+// REQUIRED: when doctype is book, we need at least one section!
+== An experienced software developer
+
+{uri-pj-cv}[Developing software apps since 1993^]. Currently:
+
+. Working for {Unbox} at {CaixaSeguradora}.
+.. *Doing application architecture* with *[red]#security in mind#*.
+... Next Monday (August 18) I will talk about security covering some
+topics like {Passbolt} and {Keycloak}.
+.. *Learning {Angular} 10* while developing a web app using it
+to migrate an existent application.
+
+== A lazy (and fat) triathlete (in this COVID-19 moment)
+
+. Not so intense in physical training at this moment.
+.. But with three (3) finished Ironman proofs.
+. I'm writing some web and mobile apps *in [red]#lazy mode#* to a
+personal project named {FinisherTech}.
+.. *Using {ReactNative} and {Solidity} (Ethereum Blockchain)*.

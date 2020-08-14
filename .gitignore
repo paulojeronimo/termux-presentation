@@ -1,0 +1,8 @@
+/*.html
+/build
+
+# https://github.com/paulojeronimo/termux-docker copied files:
+# $ cp <termux-docker dir>/run.sh ./termux-docker.sh
+# $ cp <termux-docker dir>/config.sh .
+/termux-docker.sh
+/config.sh

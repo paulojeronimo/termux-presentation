@@ -1,0 +1,5 @@
+= Termux presentation
+
+All you need to know is available on this page:
+
+http://paulojeronimo.github.io/termux-presentation

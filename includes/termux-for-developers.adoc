@@ -1,0 +1,101 @@
+[multipage-level=1]
+= Termux for developers (we! 😎)
+include::header.adoc[]
+
+== Creating and using a desktop developement environment (with Docker)
+
+=== Prerequisites
+
+. A Bash shell running on macOS, Linux or Windows (with Cygwin
+installed).
++
+WARNING: Until now, the steps below where only tested on a macOS
+environment.
++
+. Docker installed. (of course! 😄)
+
+=== Clone paulojeronimo/termux-docker
+
+Here I present you a nice and productive way to create your
+applications before package than and liberate their use.
+
+----
+$ mkdir ~/lab-termux && cd $_
+$ git clone https://github.com/paulojeronimo/termux-docker && cd `basename $_`
+----
+
+NOTE: You can also fork this repo and use your own! 😃 +
+You will see that my repo is a fork too (with some improvements) from
+https://github.com/xeffyr/termux-docker[xeffyr/termux-docker^]!
+
+=== Build and run your own Docker image
+
+Copy `config.sample.sh` to `config.sh` and configure your {DockerHub}
+username on it.
+
+----
+$ cp config.sample.sh config.sh
+$ vim config.sh
+----
+
+Invoke `build-all.sh` script:
+
+----
+$ ./build-all.sh
+----
+
+Invoke `run.sh` script:
+
+----
+$ ./run.sh
+----
+
+== Test your Docker image to build this site
+
+=== Clone paulojeronimo/termux-presentation
+
+----
+$ cd ~/lab-termux
+$ git clone https://github.com/paulojeronimo/termux-presentation && cd `basename $_`
+----
+
+=== Copy the run.sh and config.sh (from termux-docker)
+
+----
+$ cp ../termux-docker/run.sh ./termux-docker.sh
+$ cp ../termux-docker/config.sh ./
+----
+
+=== Build this site by creating a termux-docker container
+
+----
+$ ./termux-docker.sh
+----
+
+Sample output for the command above:
+
+----
+include::termux-docker.txt[]
+----
+
+Call `build.sh` inside the shell provided by the container:
+
+----
+$ ./build.sh
+Building content in termux environment ...
+Skipping the call to "build-multipage-version" for termux environment!
+Reason: termux can not run Docker (Yet! Maybe someday!?)
+Follow this link:
+https://www.reddit.com/r/termux/comments/av6z2s/how_to_install_docker_on_termux/ehd5yus/
+Generated content (the "build" directory tree shown below):
+build
+└── singlepage
+    ├── asciidoctor.css
+    └── index.html
+
+1 directory, 2 files
+----
+
+WARNING: In the first execution of the command above, the `build.sh`
+script will install the required packages. So, the output will be more
+extensive than showed.

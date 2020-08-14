@@ -1,0 +1,39 @@
+= Termux presentation
+{localdatetime}
+ifdef::backend-html5[]
+:toc:
+:numbered:
+endif::[]
+ifdef::backend-multipage_html5[]
+:toc: left
+:doctype: book
+:chapter-label:
+:multipage-level: 0
+endif::[]
+:toclevels: 4
+:icons: font
+:imagesdir: images
+:data-uri:
+:idprefix:
+:idseparator: -
+:nofooter:
+
+ifdef::backend-html5[]
+include::includes/uris.adoc[]
+include::includes/attributes.adoc[]
+:leveloffset: +1
+endif::[]
+
+include::includes/introduction.adoc[]
+
+include::includes/who-is-paulo-jeronimo.adoc[]
+
+include::includes/what-is-termux.adoc[]
+
+include::includes/termux-for-developers.adoc[]
+
+include::includes/references.adoc[]
+
+ifdef::backend-html5[]
+:leveloffset: -1
+endif::[]

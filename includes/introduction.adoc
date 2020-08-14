@@ -1,0 +1,36 @@
+include::header.adoc[]
+
+ifdef::backend-html5[]
+= Introduction
+endif::[]
+
+This is a {Termux} presentation created by {PauloJeronimo} using the
+{uri-asciidoc-syntax-quick-reference}[AsciiDoc Syntax^].
+
+[NOTE]
+====
+. You can also
+ifdef::backend-html5[]
+link:../multipage/index.html[see this content in a multi page format].
+endif::[]
+ifdef::backend-multipage_html5[]
+link:../singlepage/index.html[see this content as a single page].
+endif::[]
+. {uri-github-paulojeronimo-termux-presentation}[Download the source
+code of this site in GitHub^].
+====
+
+*[red]#Download and build this presentation using your own Android
+device#* by following these steps:
+
+. <<how-to-install,Install Termux>> and start it.
+. Copy this command to the shell:
++
+----
+$ curl https://j.mp/TODO | bash
+----
+. Open the generated doc:
++
+----
+$ TODO
+----

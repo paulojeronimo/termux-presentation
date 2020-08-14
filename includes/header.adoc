@@ -1,0 +1,4 @@
+ifdef::backend-multipage_html5[]
+include::uris.adoc[]
+include::attributes.adoc[]
+endif::[]
