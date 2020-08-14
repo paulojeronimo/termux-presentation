@@ -24,13 +24,17 @@ code of this site in GitHub^].
 device#* by following these steps:
 
 . <<how-to-install,Install Termux>> and start it.
-. Copy this command to the shell:
+. Type the following commands into the shell:
 +
+[subs=attributes+]
 ----
-$ curl https://j.mp/TODO | bash
+$ pkg install git
+$ git clone {uri-github-paulojeronimo-termux-presentation}
+$ cd $(basename $_)
+$ ./build.sh
 ----
 . Open the generated doc:
 +
 ----
-$ TODO
+$ termux-open build/singlepage/index.html
 ----

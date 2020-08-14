@@ -44,10 +44,10 @@ build-singlepage-version() {
         # Fix an issue
         mkdir -p /data/data/com.termux/cache/apt/archives/partial
         # Install the required packages to run the next commands
-        yes | pkg install asciidoctor tree
+        for pkg in asciidoctor tree; do yes | pkg install $pkg; done
       }
   esac
-  asciidoctor -a linkcss index.adoc -D build/singlepage
+  asciidoctor index.adoc -D build/singlepage
 }
 
 _publish() {
