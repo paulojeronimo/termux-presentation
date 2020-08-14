@@ -50,11 +50,34 @@ build-singlepage-version() {
   asciidoctor -a linkcss index.adoc -D build/singlepage
 }
 
-rm -rf build
+_publish() {
+  [ -d build ] || { echo "\"build\" directory does not exists!"; return 0; }
+  echo "Publish the contents in \"build\" to GitHub Pages ..."
+  local remote_repo=`git config --get remote.origin.url`
+  local msg="Published at `date`"
+  cd build
+  git init
+  git add -A
+  git commit -m "$msg"
+  git push --force $remote_repo master:gh-pages
+  cd - &> /dev/null
+}
 
-echo "Building content in `my-environment` environment ..."
-build-multipage-version
-build-singlepage-version
+_build-all() {
+  rm -rf build
 
-echo "Generated content (the \"build\" directory tree shown below):"
-tree build
+  echo "Building content in `my-environment` environment ..."
+  build-multipage-version
+  build-singlepage-version
+
+  echo "Generated content (the \"build\" directory tree shown below):"
+  tree build
+
+  ! [ "${1:-}" = "--publish" ] || _publish
+}
+
+task=${1:-build-all}
+! [[ $task =~ --.* ]] || { set -- build-all $task; task=build-all; }
+shift || :
+type _$task &> /dev/null || { echo "Function _$task not found!"; exit 1; }
+_$task ${@:-}
