@@ -2,15 +2,15 @@
 = Termux for developers (we! 😎)
 include::header.adoc[]
 
-== Creating and using a desktop developement environment (with Docker)
+== Creating and using a desktop development environment (with Docker)
 
 === Prerequisites
 
 . A Bash shell running on macOS, Linux or Windows (with Cygwin
 installed).
 +
-WARNING: Until now, the steps below where only tested on a macOS
-environment.
+WARNING: Until now, the steps below were tested only in macOS and
+Ubuntu Linux operating systems.
 +
 . Docker installed. (of course! 😄)
 

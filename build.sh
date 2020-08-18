@@ -16,8 +16,10 @@ build-multipage-version() {
   case "`my-environment`" in
     desktop)
       asciidoctor() {
-        docker run -it -e TZ=$TZ --rm \
-          -v "$PWD":/documents $ASCIIDOCTOR_MULTIPAGE_IMAGE "$@"
+        local linux_opts
+        ! [ "$OSTYPE" = "linux-gnu" ] || linux_opts="--user $(id -u):$(id -g)"
+        #docker run -it -e TZ=$TZ --rm ${linux_opts:-} \
+        #  -v "$PWD":/documents $ASCIIDOCTOR_MULTIPAGE_IMAGE "$@"
       }
       ;;
     termux)
@@ -31,21 +33,37 @@ build-multipage-version() {
   asciidoctor -a linkcss index.adoc -D build/multipage
 }
 
+install-pkg() {
+  local pkg=$1
+  which $pkg &> /dev/null && {
+    echo "Required package \"$pkg\" is installed!"
+    return 0
+  } || {
+    echo "Installing \"$pkg\" (please wait) ..."
+    yes | pkg install $pkg || :
+  }
+  which $pkg &> /dev/null || {
+    echo "Failed to install $pkg! Aborting (sorry!) ..."
+    exit 1
+  }
+}
+
 build-singlepage-version() {
   case "`my-environment`" in
     desktop)
       asciidoctor() {
-        docker run -it -e TZ=$TZ --rm \
+        local linux_opts
+        ! [ "$OSTYPE" = "linux-gnu" ] || linux_opts="--user $(id -u):$(id -g)"
+        docker run -it -e TZ=$TZ --rm ${linux_opts:-} \
           -v "$PWD":/documents $ASCIIDOCTOR_IMAGE asciidoctor "$@"
       }
       ;;
     termux)
-      which asciidoctor &> /dev/null || {
-        # Fix an issue
-        mkdir -p /data/data/com.termux/cache/apt/archives/partial
-        # Install the required packages to run the next commands
-        for pkg in asciidoctor tree; do yes | pkg install $pkg; done
-      }
+      # Fix an issue when running in a docker-termux container
+      local d=/data/data/com.termux/cache/apt/archives/partial
+      [ -x $d ] || mkdir -p $d
+      # Install the required packages to run the next commands
+      for pkg in asciidoctor tree; do install-pkg $pkg; done
   esac
   asciidoctor index.adoc -D build/singlepage
 }
