@@ -16,10 +16,8 @@ build-multipage-version() {
   case "`my-environment`" in
     desktop)
       asciidoctor() {
-        local linux_opts
-        ! [ "$OSTYPE" = "linux-gnu" ] || linux_opts="--user $(id -u):$(id -g)"
-        #docker run -it -e TZ=$TZ --rm ${linux_opts:-} \
-        #  -v "$PWD":/documents $ASCIIDOCTOR_MULTIPAGE_IMAGE "$@"
+        docker run -it -e TZ=$TZ --rm \
+          -v "$PWD":/documents $ASCIIDOCTOR_MULTIPAGE_IMAGE "$@"
       }
       ;;
     termux)
@@ -52,9 +50,7 @@ build-singlepage-version() {
   case "`my-environment`" in
     desktop)
       asciidoctor() {
-        local linux_opts
-        ! [ "$OSTYPE" = "linux-gnu" ] || linux_opts="--user $(id -u):$(id -g)"
-        docker run -it -e TZ=$TZ --rm ${linux_opts:-} \
+        docker run -it -e TZ=$TZ --rm \
           -v "$PWD":/documents $ASCIIDOCTOR_IMAGE asciidoctor "$@"
       }
       ;;

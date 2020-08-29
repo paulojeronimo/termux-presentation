@@ -8,11 +8,37 @@ include::header.adoc[]
 
 . A Bash shell running on macOS, Linux or Windows (with Cygwin
 installed).
-+
-WARNING: Until now, the steps below were tested only in macOS and
-Ubuntu Linux operating systems.
-+
 . Docker installed. (of course! 😄)
+
+[WARNING]
+====
+Until now, *[red]#the steps below were tested only in macOS and
+Ubuntu Linux operating systems#*.
+Here are the details:
+
+macOS: ::
+----
+$ sw_vers
+ProductName:    Mac OS X
+ProductVersion: 10.15.6
+BuildVersion:   19G2021
+
+$ docker --version
+Docker version 19.03.12, build 48a66213fe
+----
+
+Ubuntu: ::
+----
+$ cat  /etc/lsb-release
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=20.04
+DISTRIB_CODENAME=focal
+DISTRIB_DESCRIPTION="Ubuntu 20.04.1 LTS"
+
+$ docker --version
+Docker version 19.03.12, build 48a66213fe
+----
+====
 
 === Clone paulojeronimo/termux-docker
 
@@ -35,8 +61,14 @@ username on it.
 
 ----
 $ cp config.sample.sh config.sh
-$ vim config.sh
+$ sed -i 's/xeffyr/paulojeronimo/g' config.sh
 ----
+
+[NOTE]
+====
+. If you are using macOS, change the last command to `gsed`.
+. Change `paulojeronimo` to your username on {DockerHub}.
+====
 
 Invoke `build-all.sh` script:
 
@@ -44,11 +76,16 @@ Invoke `build-all.sh` script:
 $ ./build-all.sh
 ----
 
-Invoke `run.sh` script:
+Test a docker container creation by invoking the `run.sh` script:
 
 ----
 $ ./run.sh
 ----
+
+Type kbd:[Ctrl+D] to exit.
+
+NOTE: Note (by typing a `docker ps -a`) that a container
+named `termux-docker-i686-XXXXXXX` will remain running.
 
 == Test your Docker image to build this site
 
@@ -63,7 +100,7 @@ $ git clone https://github.com/paulojeronimo/termux-presentation && cd `basename
 
 ----
 $ cp ../termux-docker/run.sh ./termux-docker.sh
-$ cp ../termux-docker/config.sh ./
+$ cp ../termux-docker/config.sh .
 ----
 
 === Build this site by creating a termux-docker container

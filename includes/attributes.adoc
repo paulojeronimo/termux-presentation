@@ -1,6 +1,4 @@
 :PauloJeronimo: <<who-is-paulo-jerônimo,Paulo Jerônimo>>
-:Unbox: Unbox
-:CaixaSeguradora: Caixa Seguradora
 :Angular: Angular
 :ReactNative: React Native
 :Solidity: Solidity
@@ -9,3 +7,7 @@
 :Keycloak: {uri-keycloak}[Keycloak^]
 :Passbolt: {uri-passbolt}[Passbolt^]
 :DockerHub: {uri-dockerhub}[Docker Hub^]
+:OpenSSL: {uri-openssl}[OpenSSL^]
+:mitmproxy: {uri-mitmproxy}[mitmproxy^]
+:ncat: {uri-ncat}[ncat^]
+:OpenPGP: {uri-openpgp}[OpenPGP^]

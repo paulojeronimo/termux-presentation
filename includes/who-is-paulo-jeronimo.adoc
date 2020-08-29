@@ -7,12 +7,11 @@ include::header.adoc[]
 
 {uri-pj-cv}[Developing software apps since 1993^]. Currently:
 
-. Working for {Unbox} at {CaixaSeguradora}.
-.. *Doing application architecture* with *[red]#security in mind#*.
-... Next Monday (August 18) I will talk about security covering some
-topics like {Passbolt} and {Keycloak}.
-.. *Learning {Angular} 10* while developing a web app using it
-to migrate an existent application.
+. Doing *application architecture* and *software development*, with
+*[red]#security in mind#*, for some customers.
+. Creating labs and tutorials (like this one) using some tools like
+{ncat}, {OpenSSL}, {OpenPGP}, {Passbolt}, {Keycloak}, {mitmproxy},
+{Termux} and many others.
 
 == A lazy (and fat) triathlete (in this COVID-19 moment)
 

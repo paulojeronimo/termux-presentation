@@ -16,6 +16,10 @@
 :uri-keycloak: https://www.keycloak.org/
 :uri-passbolt: https://www.passbolt.com
 :uri-dockerhub: https://hub.docker.com/
+:uri-mitmproxy: https://mitmproxy.org/
+:uri-openssl: https://www.openssl.org/
+:uri-openpgp: https://www.openpgp.org/
+:uri-ncat: https://nmap.org/ncat/
 
 // https://www.makeuseof.com/tag/use-linux-command-line-android-termux/
 // https://gist.github.com/gpchelkin/b18916c56ff7c759860725a28a747242
