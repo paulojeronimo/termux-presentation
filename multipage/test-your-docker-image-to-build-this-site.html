@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 1.5.7.1">
+<meta name="author" content="2020-08-29 14:41:41 UTC">
+<title>Termux presentation</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<link rel="stylesheet" href="./asciidoctor.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="test-your-docker-image-to-build-this-site" class="book toc2 toc-left">
+<div id="header">
+<h1>Termux presentation</h1>
+<div class="details">
+<span id="author" class="author">2020-08-29 14:41:41 UTC</span><br>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="index.html">Termux presentation</a></span></p><ul class="sectlevel0">
+<li><a href="who-is-paulo-jerônimo.html">Who is Paulo Jerônimo?</a>
+</li>
+<li><a href="what-is-termux.html">What is Termux?</a>
+</li>
+<li><a href="termux-for-developers-we.html">Termux for developers (we! 😎)</a>
+<ul class="sectlevel1">
+<li><a href="creating-and-using-a-desktop-development-environment-with-docker.html">Creating and using a desktop development environment (with Docker)</a>
+</li>
+<li><a href="test-your-docker-image-to-build-this-site.html"><span class="toc-current">Test your Docker image to build this site</span></a>
+<ul class="sectlevel2">
+<li><a href="test-your-docker-image-to-build-this-site.html#clone-paulojeronimotermux-presentation">Clone paulojeronimo/termux-presentation</a>
+</li>
+<li><a href="test-your-docker-image-to-build-this-site.html#copy-the-run-sh-and-config-sh-from-termux-docker">Copy the run.sh and config.sh (from termux-docker)</a>
+</li>
+<li><a href="test-your-docker-image-to-build-this-site.html#build-this-site-by-creating-a-termux-docker-container">Build this site by creating a termux-docker container</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="some-references.html">Some references</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="test-your-docker-image-to-build-this-site">Test your Docker image to build this site</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="clone-paulojeronimotermux-presentation">Clone paulojeronimo/termux-presentation</h3>
+<div class="listingblock">
+<div class="content">
+<pre>$ cd ~/lab-termux
+$ git clone https://github.com/paulojeronimo/termux-presentation &amp;&amp; cd `basename $_`</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="copy-the-run-sh-and-config-sh-from-termux-docker">Copy the run.sh and config.sh (from termux-docker)</h3>
+<div class="listingblock">
+<div class="content">
+<pre>$ cp ../termux-docker/run.sh ./termux-docker.sh
+$ cp ../termux-docker/config.sh .</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="build-this-site-by-creating-a-termux-docker-container">Build this site by creating a termux-docker container</h3>
+<div class="listingblock">
+<div class="content">
+<pre>$ ./termux-docker.sh</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Sample output for the command above:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Creating new container...
+1cefff4f2a0b898d49059c3d049aa3edfb66f966d4d9810b799b1bb47107a1aa
+
+Welcome to Termux!
+
+Wiki:            https://wiki.termux.com
+Community forum: https://termux.com/community
+Gitter chat:     https://gitter.im/termux/termux
+IRC channel:     #termux on freenode
+
+Working with packages:
+
+ * Search packages:   pkg search &lt;query&gt;
+ * Install a package: pkg install &lt;package&gt;
+ * Upgrade packages:  pkg upgrade
+
+Subscribing to additional repositories:
+
+ * Root:     pkg install root-repo
+ * Unstable: pkg install unstable-repo
+ * X11:      pkg install x11-repo
+
+Report issues at https://termux.com/issues
+
+Updating static DNS:
+
+54.148.239.199 dl.bintray.com
+104.18.37.234 termux.net
+172.67.193.33 termux.org
+18.228.52.138 github.com
+18.228.142.205 codeload.github.com
+18.228.67.229 gist.github.com
+151.101.0.133 gist.githubusercontent.com
+151.101.0.133 raw.githubusercontent.com
+
+$</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Call <code>build.sh</code> inside the shell provided by the container:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ ./build.sh
+Building content in termux environment ...
+Skipping the call to "build-multipage-version" for termux environment!
+Reason: termux can not run Docker (Yet! Maybe someday!?)
+Follow this link:
+https://www.reddit.com/r/termux/comments/av6z2s/how_to_install_docker_on_termux/ehd5yus/
+Generated content (the "build" directory tree shown below):
+build
+└── singlepage
+    ├── asciidoctor.css
+    └── index.html
+
+1 directory, 2 files</pre>
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+In the first execution of the command above, the <code>build.sh</code>
+script will install the required packages. So, the output will be more
+extensive than showed.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="creating-and-using-a-desktop-development-environment-with-docker.html">Creating and using a desktop development environment (with Docker)</a> | ↑ Up: <a href="termux-for-developers-we.html">Termux for developers (we! 😎)</a> | ⌂ Home: <a href="index.html">Termux presentation</a> | Next: <a href="some-references.html">Some references</a> →</p>
+</div>
+</div>
+</body>
+</html>
